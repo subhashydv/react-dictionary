@@ -1,0 +1,15 @@
+.meaning-block {
+  margin: 1em 0;
+}
+
+.list {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  margin: 0 1em;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

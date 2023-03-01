@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/input.css";
 
 class Input extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Input extends React.Component {
     return (
       <div>
         <input value={this.state.inputText} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
-        <p>You are searching for : {this.state.inputText}</p>
+        <p className="reflector">You are searching for : {this.state.inputText}</p>
 
       </div >
     )

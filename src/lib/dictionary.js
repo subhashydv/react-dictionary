@@ -1,6 +1,8 @@
 import React from "react";
+import loadingImage from "../images/loading-gif.gif";
+import "../css/dictionary.css"
 
-const Loading = (_) => <div>Loading...</div>;
+const Loading = (_) => <div><img className="center" src={loadingImage}></img></div>;
 
 class Dictionary extends React.Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class Dictionary extends React.Component {
   meanings() {
     return this.state.meaning.map((x, index) => {
       const { definition, partOfSpeech } = x;
-      return (<p key={index}>{partOfSpeech} : {definition}</p>);
+      return (<p className="meaning-block" key={index}><h3>{partOfSpeech} :</h3> <ol>{definition.map(a => <li className="list">{a}</li>)}</ol></p>);
     });
   }
 
@@ -48,7 +50,14 @@ class Dictionary extends React.Component {
 const processOutput = (output) => {
   console.log(output);
   const { meanings } = output[0];
-  return meanings.map(({ definitions, partOfSpeech }) => { return { definition: definitions[0].definition, partOfSpeech } });
+  return meanings.map(({ definitions, partOfSpeech }) => { return { definition: flatDefinition(definitions), partOfSpeech } });
+}
+
+const flatDefinition = (definitions) => {
+  return definitions.reduce((context, definition) => {
+    context.push(definition.definition);
+    return context;
+  }, [])
 }
 
 export default Dictionary;

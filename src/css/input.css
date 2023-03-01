@@ -1,0 +1,19 @@
+input {
+  width: 100%;
+  text-align: center;
+  height: 2em;
+  font-size: 1.5em;
+  border-style: none;
+  outline: 0;
+  border-bottom: 1px solid grey;
+  background-color: transparent;
+  color: hsl(5deg 73% 91% / 75%)
+}
+
+
+.reflector {
+  text-align: center;
+  margin: 1em;
+  font-size: 1.2em;
+  color: hsl(5deg 73% 91% / 75%)
+}

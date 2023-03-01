@@ -1,5 +1,5 @@
 import React from 'react';
-import DictionaryWrapper from "./dictionaryWrapper";
+import DictionaryWrapper from "./lib/dictionaryWrapper";
 
 function App() {
   return (
